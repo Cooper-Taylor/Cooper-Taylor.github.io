@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Page</title>
+        <link rel="stylesheet" href="css/boxStyles.css"> <!--Box template-->
+        <link rel="stylesheet" href="css/MainPageStyle.css"> <!--Link to stylesheet-->
+        <link rel="stylesheet" href="css/generalClasses.css">
+        <link rel="stylesheet" href="css/boxAnimations.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> <!--Just -->
+    </head>
+
+    <body onload="loadSite()">
+
+        <div style="height:100%;">
+            <div id="boxContainer">
+                <div class="Box unselectable" id="CuBox" onclick = "CuTransitionFunctionOut('aboutme.html');">
+                    <div>29</div>
+                    <div>Cu</div>
+                    <div>63.546</div>
+                </div>
+                <div class="Box unselectable" id="TaBox" onclick = "TaTransitionFunctionOut('littletest.html');">
+                    <div>73</div>
+                    <div>Ta</div>
+                    <div>180.95</div>
+                </div>
+                <div class="Box unselectable" id="YBox" onclick = "YTransitionFunctionOut('anotherpage.html');">
+                    <div>39</div>
+                    <div>Y</div>
+                    <div>88.906</div>
+                </div>
+            </div>
+            <footer>
+                <div>
+                    <span><a href="mailto:cjtaybusiness+Website@gmail.com">CJTay.business@gmail.com </a></span>
+                    <b>Cooper Taylor</b>
+                </div>
+            </footer>
+        </div>
+        
+        <div id="TaVail" style="visibility: hidden;">
+            <div class="row"><div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div></div>
+            <div class="row"><div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div></div>
+            <div class="row"><div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div></div>
+            <div class="row"><div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div></div>
+            <div class="row"><div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div></div>
+        </div>
+
+        <div id="CuVail"></div>
+
+        <script src="js/mainPageTransitions.js"></script>
+        <script>        
+            //Allows refresh of page on any event of navigation to page
+            window.addEventListener("pageshow", function(event){
+                //If the webpage is being loaded from cache (page is being refreshed)
+                if (event.persisted){
+                    documentWeb();
+                    setPageVisibility(1);
+
+                } else {
+                    console.log(localStorage["prevPath"]);
+                    //Screw it all I'm just going to store the most recent filepath from user and hide the other two transitions 
+                    document.getElementById("CuVail").style.setProperty("visibility","hidden");
+                    documentWeb();
+
+                    document.getElementById("TaVail").style.setProperty("visibility","hidden");
+                    removeTransitionDiv();
+                }
+            })
+
+            //JQuery scripts
+            $(document).ready(function() {
+                console.log("helpmee");
+                console.log(localStorage["prevPath"]);
+                if (localStorage["prevPath"] == "/aboutme.html"){
+                    adoptBackground(localStorage["prevPath"]);
+                    CuTransitionFunctionIn();
+                }
+                if(localStorage["prevPath"] == "/littletest.html"){
+                    console.log("Got here baby");
+                    adoptBackground(localStorage["prevPath"]);
+                    TaTransitionFunctionIn();
+                }
+                if(localStorage["prevPath"] == "/anotherpage.html"){
+                    YTransitionFunctionIn();
+                }
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Home Page</title>
+                <link rel="stylesheet" href="css/boxStyles.css">
+                <link rel="stylesheet" href="css/generalClasses.css">
+                <link rel="stylesheet" href="css/boxAnimations.css">
+                <link rel="stylesheet" href="css/AboutMe.css">
+                <link rel="stylesheet" href="css/Header.css">
+                <script src="js/mainPageTransitions.js"></script>
+                <script src="js/headerAlignment.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        </head>
+        <body>
+                <header>
+                        <div id="container">
+                                <div class="Box unselectable" id="CuBox" onclick="documentWeb(); CuTransitionFunctionOut('index.html')">
+                                        <div>&nbsp;</div>
+                                        <div>Home</div>
+                                        <div>&nbsp;</div>
+                                </div>
+                                <div class="Box unselectable" id="TaBox" onclick="TaTransitionFunctionOut('littletest.html')">
+                                        <div>73</div>
+                                        <div>Ta</div>
+                                        <div>180.95</div>
+                                </div>
+                                <div class="Box unselectable" id="YBox" onclick = "YTransitionFunctionOut('anotherpage.html');">
+                                        <div>39</div>
+                                        <div>Y</div>
+                                        <div>88.906</div>
+                                        <div class="radioactive"></div>
+                                </div>
+                        </div>
+                </header>
+                <div class="flex-container">
+                        <div class="aboutmeText">
+                                Hello! I'm Cooper Taylor - a current first-year Computer Science (B.S.) student at Clemson Univeristy, 
+                                with an expected graduation date of 12/2025. <br />
+                        </div>
+                        <div class="aboutmeText">
+                                If I were to summarize who I am in one phrase, it would be the following:
+
+                                Addicted to the pursuit of knowledge.
+
+                                Any adventure, exploit, or challenge that comes my way is always met openly, because I understand there is 
+                                opportunity to learn and grow. 
+
+                                From independently studying probability and set theory, to performing on the flute, to working a variety of jobs, 
+                                to picking up challenging coursework, to gardening - whatever it may be, I use those chances to expand my understanding 
+                                of the things around me; to gain an intuitive sense of the logical interactions between and behind subjects that are 
+                                seemingly unrelated is what I find to be most entertaining. <br /> <br />
+                        </div>
+                        <div class="aboutmeText">
+                                In my downtime, I enjoy anime/manga, cooking, baking (especially breads and desserts), and listening to jazz and 
+                                classical piano!
+
+                                I am an open mind, with a passion for exploring the unknown, be it scientific or humanitarian, and I sincerely hope to 
+                                find others like me.
+                        </div>
+                </div>
+                <div id="CuVail"></div>
+                <script>
+                $(document).ready(function() {
+                        document.getElementById("CuVail").style.setProperty("visibility","visible");
+                })
+
+                spaceHeader();
+
+                //Allows refresh of page on any event of navigation to page
+                window.addEventListener("pageshow", function(event){
+                //If the webpage is being loaded from cache (has been accessed before)
+                if (!event.persisted){
+                        document.getElementById("CuVail").style.setProperty("display","none");
+                        CuTransitionFunctionIn();
+                        documentWeb()
+                        };
+                })
+                </script>
+        </body>
+</html>
+

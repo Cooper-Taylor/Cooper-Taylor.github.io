@@ -1,0 +1,18 @@
+header {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: auto;
+    margin: none;
+    border: 2px black;
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    background-color: rgba(100,100,100,0.5);
+}
+
+header #container {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    z-index: 5;
+}

@@ -1,0 +1,148 @@
+body {
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+* {
+    text-decoration: none;
+}
+
+#boxContainer {
+    margin-top: 12px;
+    white-space: nowrap;
+}
+
+.radioactive{
+    position: absolute;
+    width: 101%;
+    height: 101%;
+    z-index: -1;
+    top:0px;
+    left:0px;
+    transition: z-index;
+    transition: all 0.3;
+}
+
+.radioactive:hover {
+    background-color: black;
+    z-index: 1;
+    border-radius: 50%;
+    width: 130%;
+    height: 130%;
+    top: -15%;
+    left: -15%;
+}
+
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#boxContainer {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+footer{
+    position: absolute;
+    bottom: 0px;
+    width: 100vw;
+    height: 8vh;
+    display: inline-block;
+    justify-content: space-between;
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 1;
+}
+
+footer div{
+    display: flex;
+    height: 8vh;
+    justify-content: space-between;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+footer div * {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 1.5vw;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+footer div b {
+    margin-right: 5vw;
+}
+
+footer div a{
+    font-style: italic;
+    font-weight: bold;
+    margin-left: 5vw;
+    text-decoration: none;
+    color: black;
+}
+
+
+
+@media only screen and (max-width: 700px){
+
+    .Box{
+        border-width: 0.5vh;
+        display: block;
+        width: 15vh;
+        height: 15vh;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    
+    .Box, #CuBox, #YBox{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .Box div:first-child{
+        text-align: right;
+        padding-right: 1.5vh;
+        padding-top: 0.5vh;
+        font-size: 2vh;
+    }
+
+    .Box div:nth-child(2) {
+        padding-top: 1vh;
+        font-size: 5vh;
+    }
+
+    .Box div:nth-child(3){
+        padding-top: 1vh;
+        font-size: 2vh;
+    }
+
+    footer{
+        height: 5vh;
+    }
+
+    footer div{
+        height: 5vh;
+    }
+
+    footer div * {
+        font-size: 2.5vw;
+    }
+
+    @media only screen and (max-height: 500px) {
+        #CuBox{
+            margin-top: 1vh;
+        }
+    }
+} 

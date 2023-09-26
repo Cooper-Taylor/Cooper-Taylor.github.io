@@ -1,0 +1,126 @@
+/*Copper Box Animations*/
+#CuAnimationOut {
+    height: 0%;
+    animation: copperFall 1s ease-in-out 0s forwards;
+    z-index: 10;
+}
+#CuAnimationIn {
+    height: 100%;
+    animation: copperFall 1s ease-in-out 0s;
+    animation-direction: reverse;
+    z-index: 10;
+}
+
+@keyframes copperFall {
+    0% {
+        height: 0%;
+        background-color: rgb(253,175,71);
+    }
+    100% {
+        height: 100%;
+        background-color: rgb(200, 117, 9);
+    }
+}
+
+#CuVail{
+    visibility: hidden;
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    width: 100%; 
+    height: 100%;
+    z-index: 10; 
+    background-color: rgba(200, 117, 9);
+}
+
+/* Metal Transition */
+
+#overlayDiv, #TaVail {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.row {
+    height: 20vh;
+    background: rgba(255,255,255,0);
+    display: block;
+}
+
+.row .col{
+    height: 20vh;
+    width: 20vw;
+    display: inline-block;
+}
+
+#overlayDiv :nth-child(odd) :nth-child(odd), #overlayDiv :nth-child(even) :nth-child(even){
+    background: gray;
+    border-style: inset;
+}
+
+#overlayDiv :nth-child(even) :nth-child(odd), #overlayDiv :nth-child(odd) :nth-child(even){
+    background: black;
+    border-style: outset;
+}
+
+#TaVail :nth-child(odd) :nth-child(odd), #TaVail :nth-child(even) :nth-child(even){
+    background: gray;
+    border-style: inset;
+}
+
+#TaVail :nth-child(even) :nth-child(odd), #TaVail :nth-child(odd) :nth-child(even){
+    background: black;
+    border-style: outset;
+}
+
+
+/* Radiation transition */
+#radiationOut{
+    position: absolute;
+    width: 101%;
+    height: 101%;
+    z-index: 20;
+    top:0px;
+    left:0px;
+    transition: all 0.3;
+    animation: radioactiveGrow 2.2s ease-out forwards;
+    border-radius: 50%;
+}
+
+#radiationIn{
+    position: absolute;
+    width: 101%;
+    height: 101%;
+    z-index: 20;
+    top:0px;
+    left:0px;
+    transition: all 0.3;
+    animation: radioactiveGrow 2.2s ease-in 0s reverse;
+    border-radius: 50%;
+}
+
+@keyframes radioactiveGrow{
+    0%{
+        top: 0%;
+        left: 0%;
+        scale: 0;
+        background-color: rgb(96, 175, 56);
+    }
+    70%{
+        scale: 15;
+        background-color: rgb(122,210,77); 
+    }
+    80%{
+        scale: 17;
+        background-color: rgb(160, 255, 112);
+    }
+    90%{
+        background-color: white;
+        scale: 35;
+    }
+    100%{
+        scale: 100;
+    }
+}

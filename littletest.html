@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Home Page</title>
+                <link rel="stylesheet" href="css/littletest.css">
+                <link rel="stylesheet" href="css/boxStyles.css">
+                <link rel="stylesheet" href="css/boxAnimations.css">
+                <link rel="stylesheet" href="css/generalClasses.css">
+                <link rel="stylesheet" href="css/Header.css">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        </head>
+        <body>
+                <header>
+                        <div id="container">
+                                <div class="Box unselectable" id="CuBox" onclick="documentWeb(); CuTransitionFunctionOut('aboutme.html')">
+                                        <div>29</div>
+                                        <div>Cu</div>
+                                        <div>63.546</div>
+                                </div>
+                                <div class="Box unselectable" id="TaBox" onclick="documentWeb(); TaTransitionFunctionOut('index.html')">
+                                        <div>&nbsp;</div>
+                                        <div>Home</div>
+                                        <div>&nbsp;</div>
+                                </div>
+                                <div class="Box unselectable" id="YBox" onclick = "documentWeb(); YTransitionFunctionOut('anotherpage.html');">
+                                        <div>39</div>
+                                        <div>Y</div>
+                                        <div>88.906</div>
+                                        <div class="radioactive"></div>
+                                </div>
+                        </div>
+                </header>
+
+                <div id="TaVail">
+                        <div class="row"><div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div></div>
+                        <div class="row"><div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div></div>
+                        <div class="row"><div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div></div>
+                        <div class="row"><div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div></div>
+                        <div class="row"><div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div></div>
+                </div>
+
+                <script src="js/mainPageTransitions.js"></script>
+                <script src="js/headerAlignment.js"></script>
+                <script>
+                        spaceHeader();
+
+                        //Allows refresh of page on any event of navigation to page
+                        window.addEventListener("pageshow", function(event){
+                        //If the webpage is being loaded from cache (has been accessed before)
+                        if (!event.persisted){
+                                        document.getElementById("TaVail").style.setProperty("visibility","hidden");
+                                        document.getElementById("TaVail").style.setProperty("z-index","-10");
+                                        TaTransitionFunctionIn();
+                                        console.log(document.getElementById("overlayDiv"));
+                                        removeTransitionDiv();
+                                        documentWeb()
+                                };
+                        })
+                </script>
+        </body>
+</html>
+

@@ -1,0 +1,51 @@
+body {
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/*Box specific stylings*/
+#CuBox {
+    margin-left: 9vh;
+    transition: background-color 0.1s, transform 0.3s;
+}
+#CuBox:hover{
+    background-color: rgba(253,175,71,100);
+    transform: scale(1.2);
+}
+
+
+#TaBox{
+   transition: background-color 0.1s, transform 0.3s; 
+}
+#TaBox:hover{
+    background-color: rgba(146,146,146,80);
+    transform: scale(1.2);
+}
+
+
+#YBox{
+    margin-right: 9vh;
+    transition: transform 0.3s;
+}
+#YBox:hover{
+    transform: scale(1.2);
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 100vw;
+    top: 30vh;
+}
+
+.aboutmeText{
+    width: 100vw;
+    white-space: wrap;
+    text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;
+}
