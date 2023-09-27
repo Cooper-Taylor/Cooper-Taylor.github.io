@@ -49,9 +49,15 @@ body {
 }
 
 .aboutmeText{
-    width: 100vw;
+    width: 90vw;
     white-space: wrap;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+}
+
+@media only screen and (max-width: 600px){
+    .flex-container {
+        top: 15vh;
+    }
 }
