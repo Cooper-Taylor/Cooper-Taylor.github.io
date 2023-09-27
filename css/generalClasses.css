@@ -6,3 +6,43 @@
     -ms-user-select: none;
     user-select: none;
 }
+
+.flex-container {
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 100vw;
+    top: 30vh;
+}
+
+.Text{
+    font-size: 1.8vw;
+    width: 90vw;
+    white-space: normal;
+    overflow-wrap: break-word;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 600px){
+    .flex-container {
+        top: 15vh;
+    }
+    .Text{
+        font-size: 1em;
+    }
+}
+
+@media only screen and (max-height: 600px){
+    .flex-container{
+        top: 150px;
+    }
+}
